@@ -1,1 +1,1 @@
-[Birra33 App](https://dusanpo.github.io/birra33/)
+[birra33-improved](https://dusanpo.github.io/birra33-improved/)
