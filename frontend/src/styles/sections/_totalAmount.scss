@@ -1,0 +1,36 @@
+.total-amount {
+  .amount {
+    @media (max-width: 1000px) {
+      margin-top: 10rem;
+    }
+    margin-top: 6rem;
+    background-color: #f3e2bd;
+    .amount-wrapper {
+      height: 4rem;
+      .total {
+        color: $modal-text-color;
+      }
+    }
+  }
+  .buttons {
+    @media(max-width: 990px){
+      margin-top: 15rem;
+    }
+    margin-top: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    .checkout,
+    .clearCart {
+      background-color: $modal-text-color;
+      color: $hover-color;
+      border: none;
+      padding: 6px;
+      border-radius: 3px;
+    }
+    .clearCart {
+      background-color: $nav-bg-color;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+body {
+  background-color: $hover-color;
+}
+.shoping-items {
+  margin-top: 3.2rem;
+  padding-bottom: 2rem;
+  .label-cart {
+    .empty-cart {
+      @include text-font(uppercase, $alegreya);
+      padding-top: 3.5rem;
+      color: $modal-text-color;
+      font-size: 1.8rem;
+    }
+    .fa-circle-arrow-left {
+      margin-top: 0.5rem;
+      font-size: 2.2rem;
+      color: $nav-bg-color;
+    }
+  }
+  .shopping-cart {
+    display: grid;
+    grid-template-columns: repeat(1, 26rem);
+    justify-content: center;
+    gap: 1.5rem;
+    .cart-item {
+      border-radius: 5px;
+      display: flex;
+      &:hover {
+        box-shadow: 1px 0px 33px 4px rgba(128, 112, 112, 0.79);
+        -webkit-box-shadow: 1px 0px 33px 4px rgba(128, 112, 112, 0.79);
+        -moz-box-shadow: 1px 0px 33px 4px rgba(128, 112, 112, 0.79);
+      }
+      .image-wrapper {
+        width: 6rem;
+        background-color: $card-botttom-color;
+        .image {
+          height: 9rem;
+          padding-top: 1rem;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .details {
+        background-color: $asside-color;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 1rem 1rem 0 1rem;
+        i {
+          cursor: pointer;
+        }
+        .cart-title {
+          width: 18.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .title-price {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .cart-price {
+              background-color: #664e44;
+              color: $hover-color;
+              border-radius: 4px;
+              padding: 2px 6px;
+            }
+          }
+          .fa-sharp {
+            color: $modal-text-color;
+            font-size: 22px;
+            padding-bottom: 20px;
+          }
+        }
+        .buttons {
+          display: flex;
+          flex-direction: row;
+          gap: 8px;
+          font-size: 1.3rem;
+          .bi-dash-lg {
+            color: red;
+          }
+          .bi-plus-lg {
+            color: green;
+          }
+        }
+        .sum-price {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

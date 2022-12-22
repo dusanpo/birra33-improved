@@ -1,0 +1,27 @@
+@import "../abstracts/mixins/sizeWeight";
+
+.food-form-wrapper {
+  .food-form {
+    margin-left: 2rem;
+    width: 50%;
+    .food-title {
+      @include text-font(uppercase, $alegreya);
+      font-size: 1.2rem;
+      color: $nav-bg-color;
+    }
+    input[name="filter"] {
+      accent-color: $nav-bg-color;
+    }
+    .food-categories {
+      cursor: pointer;
+      color: $modal-text-color;
+      @include size-weight(1rem, 600);
+      &:hover {
+        color: $icon-color;
+      }
+    }
+  }
+  hr {
+    border: 1px solid $white-color;
+  }
+}

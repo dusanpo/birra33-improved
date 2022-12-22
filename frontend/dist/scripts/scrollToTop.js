@@ -1,0 +1,1 @@
+const scrollToTop=document.querySelector(".scroll-to-top");window.addEventListener("scroll",(()=>{window.pageYOffset>100?scrollToTop.classList.add("active"):scrollToTop.classList.remove("active")}));

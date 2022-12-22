@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/47a680c56b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./frontend/dist/styles/app.css" />
+    <title>Birra33 Project</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand logo">
+          <img src="./images/logo.png" alt="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="colapse navbar-collapse navbar-items" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link"> HOME </a>
+            </li>
+            <li class="nav-item">
+              <a href="#brewery" class="nav-link"> BREWERY </a>
+            </li>
+            <li class="nav-item">
+              <a href="#events" class="nav-link"> EVENTS </a>
+            </li>
+            <li class="nav-item">
+              <a href="#reservetion" class="nav-link"> RESERVETION </a>
+            </li>
+            <li class="nav-item">
+              <a href="#features" class="nav-link"> FEATURES</a>
+            </li>
+            <li class="nav-item">
+              <a href="#blog" class="nav-link"> BLOG </a>
+            </li>
+            <li class="nav-item">
+              <a href="#contacts" class="nav-link"> CONTACTS </a>
+            </li>
+          </ul>
+          <a href="cart.html">
+            <div class="cart">
+              <i class="bi bi-cart2"></i>
+              <div id="cartAmount" class="cart-amount">0</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <section class="breadcrumb">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center breadcrumb-wrapper"
+        >
+          <div class="shop">SHOP</div>
+          <div class="current-page">
+            HOME <i class="fa-solid fa-angle-right fa-xs"></i> SHOP
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-3">
+            <div class="asside-wrapper">
+              <div class="mx-auto pb-3 input-wrapper">
+                <h2 class="text-center search-title">Filters</h2>
+                <input
+                  type="text"
+                  id="inp-search"
+                  class="form-control input-field"
+                  placeholder="Search beer by name"
+                />
+                <hr />
+              </div>
+
+              <div class="food-form-wrapper pb-3">
+                <div class="food-form pb-3">
+                  <p class="food-title">foods</p>
+                  <form id="filter-food" class="d-flex flex-column">
+                    <label>
+                      <input type="radio" name="filter" value="all" checked />
+                      <span class="food-categories">All</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="filter" value="chicken" />
+                      <span class="food-categories">Chicken</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="filter" value="cake" />
+                      <span class="food-categories">Cake</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="filter" value="cheese" />
+                      <span class="food-categories">Cheese</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="filter" value="salad" />
+                      <span class="food-categories">Salad</span>
+                    </label>
+                  </form>
+                </div>
+                <hr />
+              </div>
+
+              <div class="price-wrapper pb-4">
+                <div class="inner-wrapper">
+                  <p class="range-title">abv range</p>
+                  <div class="values">
+                    <div>
+                      <span>From:</span>
+                      <span class="value" id="range1"></span>
+                    </div>
+                    <div>
+                      <span>To:</span>
+                      <span class="value" id="range2"></span>
+                    </div>
+                  </div>
+                  <div class="contain">
+                    <div class="slider-track"></div>
+                    <input
+                      type="range"
+                      min="0"
+                      max="56"
+                      value="0"
+                      id="slider-1"
+                      oninput="slideOne()"
+                    />
+                    <input
+                      type="range"
+                      min="0"
+                      max="56"
+                      value="56"
+                      id="slider-2"
+                      oninput="slideTwo()"
+                    />
+                  </div>
+                </div>
+                <hr />
+              </div>
+
+              <div class="date-picker-wrapper pb-4">
+                <div class="date-filters pb-4">
+                  <p class="date-range-title">Brewed after</p>
+                  <input
+                    type="month"
+                    min="2007-01"
+                    max="2014-12"
+                    id="after"
+                    class="date-input mb-3"
+                  />
+                  <p class="date-range-title">Brewed before</p>
+                  <input
+                    type="month"
+                    min="2007-02"
+                    max="2015-12"
+                    id="before"
+                    class="date-input"
+                  />
+                </div>
+                <hr />
+              </div>
+
+              <div class="text-center clear-btn-wrapper">
+                <button
+                  type="submit"
+                  onClick="refreshPage()"
+                  class="clear-button"
+                >
+                  Clear All
+                </button>
+              </div>
+
+              <ol id="ibu-filter">
+                <p class="categories-title">Categories</p>
+                <li class="angle-right-icon" value="1">
+                  <i class="fa-solid fa-angle-right fa-xs"></i>Ale
+                </li>
+                <li class="angle-right-icon" value="2">
+                  <i class="fa-solid fa-angle-right fa-xs"></i>Blonde
+                </li>
+                <li class="angle-right-icon" value="3">
+                  <i class="fa-solid fa-angle-right fa-xs"></i>Cider
+                </li>
+                <li class="angle-right-icon" value="4">
+                  <i class="fa-solid fa-angle-right fa-xs"></i>Light Beer
+                </li>
+                <li class="angle-right-icon" value="5">
+                  <i class="fa-solid fa-angle-right fa-xs"></i>Wheat Beer
+                </li>
+                <li class="angle-right-icon" value="6">
+                  <i class="fa-solid fa-angle-right fa-xs"></i>Uncategorized
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="col-lg-9">
+            <div class="row card-wrapper" id="loader-output"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div
+            class="pagination d-flex justify-content-center align-items-center pb-4"
+          >
+            <button class="page" id="prevPage" disabled>PREV</button>
+            <div class="current" id="pageNumber"></div>
+            <button class="page" id="nextPage" disabled>NEXT</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Modal-->
+    <div
+      class="modal fade modal-wrapper"
+      id="seeMoreModal"
+      tabindex="-1"
+      aria-labelledby="seeMore"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl" id="modal-box"></div>
+    </div>
+
+    <footer
+      class="footer mt-4"
+      id="contacts"
+      style="background: url(images/footer.jpg)"
+    >
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="footer-box d-flex justify-content-center">
+          <div class="footer-box-item">
+            <img src="./images/logo2.png" alt="logo2" />
+            <p class="description">
+              We are the first modern day brewery. Our success has been built
+              through the development of quality beers.
+            </p>
+            <div class="d-flex mt-5 socials">
+              <div class="icon-box">
+                <i class="fa-brands fa-twitter"></i>
+              </div>
+              <div class="icon-box">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="icon-box">
+                <i class="fa-brands fa-google-plus-g"></i>
+              </div>
+              <div class="icon-box">
+                <i class="fa-sharp fa-solid fa-rss"></i>
+              </div>
+            </div>
+          </div>
+          <div class="footer-box-item">
+            <h3 class="footer-titles links">LINKS</h3>
+            <ul class="footer-links">
+              <li class="list-item">HOME</li>
+              <li class="list-item">BREWERY</li>
+              <li class="list-item">RESERVATION</li>
+              <li class="list-item">ABOUT</li>
+              <li class="list-item">BLOG</li>
+              <li class="list-item">CONTACTS</li>
+            </ul>
+          </div>
+          <div class="footer-box-item">
+            <h3 class="footer-titles blog">BLOG</h3>
+            <ul class="blog-list">
+              <li class="pb-4 blog-list-item">
+                Our spaces are welcoming and infinitely tailorable
+              </li>
+              <li class="blog-list-item">
+                Whatever you might need to make your event sparkle
+              </li>
+            </ul>
+          </div>
+          <div class="footer-box-item">
+            <div class="footer-contacts">
+              <h3 class="footer-titles">CONTACTS</h3>
+              <p class="contacts">
+                <span>Address: </span>1229 SE Nehalem, Portland, OR 97202
+              </p>
+              <p class="contacts"><span>Phone: </span>503 230 9260</p>
+              <p class="contacts"><span>Email: </span>info@brewery.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-wrapper">
+          <span
+            ><a href="#ancora">AncoraThemes</a> © 2022. All rights reserved.
+            <a href="#terms">Terms of Use </a> and
+            <a href="#privacy"> Privacy Policy</a></span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="scroll-to-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./frontend/src/scripts/calculation.js"></script>
+    <script src="./frontend/src/scripts/modal.js"></script>
+    <script src="./frontend/src/scripts/slider.js"></script>
+    <script src="./frontend/src/scripts/scrollToTop.js"></script>
+    <script src="./frontend/src/scripts/app.js"></script>
+  </body>
+</html>

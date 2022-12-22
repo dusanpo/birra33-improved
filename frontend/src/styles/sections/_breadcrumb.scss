@@ -1,0 +1,22 @@
+.breadcrumb {
+  margin-top: 6rem;
+  background-color: $asside-color;
+  margin-bottom: 0;
+  .breadcrumb-wrapper {
+    height: 4rem;
+  }
+  .shop {
+    font-family: $alegreya;
+    font-size: 1.3em;
+    color: $card-botttom-color;
+  }
+  .current-page {
+    font-family: $fira-sans;
+    color: #44322c;
+    font-size: 1rem;
+    i {
+      color: $card-botttom-color;
+      margin: 0 3px;
+    }
+  }
+}

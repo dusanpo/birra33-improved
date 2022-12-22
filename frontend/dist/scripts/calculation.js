@@ -1,0 +1,1 @@
+const calculation=()=>{document.getElementById("cartAmount").innerHTML=addToBasket.map((e=>e.item)).reduce(((e,t)=>e+t),0)};

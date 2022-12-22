@@ -1,0 +1,52 @@
+@import "../abstracts/mixins/textFont";
+@import "../abstracts/mixins/sizeWeight";
+
+.asside-wrapper {
+  background-color: $asside-color;
+  padding: 3rem 0;
+  .input-wrapper {
+    .search-title {
+      @include text-font(uppercase, $alegreya);
+      color: $nav-bg-color;
+      padding-bottom: 1rem;
+    }
+    .input-field {
+      width: 80%;
+      margin: auto;
+      border: 1px solid $modal-text-color;
+      background-color: $hover-color;
+      margin-bottom: 2rem;
+      color: $modal-text-color;
+      font-size: 1rem;
+      &:focus {
+        box-shadow: none;
+      }
+      &::placeholder {
+        opacity: 0.8;
+      }
+    }
+    hr {
+      border: 1px solid $white-color;
+    }
+  }
+  .categories-title {
+    @include text-font(uppercase, $alegreya);
+    font-size: 1.2rem;
+    color: $nav-bg-color;
+  }
+  .angle-right-icon {
+    max-width: 60%;
+    list-style-type: none;
+    color: $modal-text-color;
+    @include size-weight(1rem, 600);
+    cursor: pointer;
+    &:hover {
+      color: $icon-color;
+    }
+    i {
+      color: $icon-color;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}

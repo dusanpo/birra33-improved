@@ -1,0 +1,50 @@
+.modal-wrapper {
+  overflow-y: scroll;
+  font-family: $alegreya;
+  font-size: 1.2rem;
+  .modal-content {
+    color: $nav-bg-color;
+    background-color: #e3cfab;
+    .header-content {
+      margin-top: 20px;
+    }
+    .close-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 5px;
+      margin-right: 5px;
+      font-size: 1rem;
+    }
+    .header-title {
+      font-size: 1.5rem;
+      padding-left: 0.2rem;
+    }
+    .header-name {
+      position: absolute;
+      right: 0;
+      margin-right: 2.5rem;
+      font-size: 1.5rem;
+    }
+    .modal-body {
+     padding-top: 1.5rem;
+      .date-text,
+      .description-text,
+      .food-pairing-text {
+        color: $modal-text-color;
+      }
+    }
+    .modal-footer {
+      padding-top: 1.5rem;
+      .abv {
+        margin-right: 20rem;
+        .result-text {
+          color: $modal-text-color;
+        }
+      }
+      .tips-text {
+        color: $modal-text-color;
+      }
+    }
+  }
+}

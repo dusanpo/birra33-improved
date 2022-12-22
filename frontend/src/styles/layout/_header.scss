@@ -1,0 +1,47 @@
+@import "../abstracts/mixins/sizeWeight";
+.navbar {
+  background: $nav-bg-color;
+  .navbar-items {
+    margin-right: 18rem;
+    .nav-item {
+      @include size-weight(1rem, 600);
+      .nav-link {
+        color: $hover-color;
+      }
+    }
+    .cart {
+      @media(max-width: 990px){
+        margin-top: 1rem;
+        margin-left: 0;
+        margin-right: 35rem;
+      }
+      position: relative;
+      margin-left: 5rem;
+      background-color: $hover-color;
+      color: $modal-text-color;
+      font-size: 1.9rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+     .bi-cart2{
+      cursor: pointer;
+     }
+      .cart-amount {
+        position: absolute;
+        top: -1rem;
+        right: -0.8rem;
+        font-size: 1.1rem;
+        background-color: $card-botttom-color;
+        color: $hover-color;
+        padding-left: 4px;
+        padding-right: 4px;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .logo {
+      margin-left: 17rem;
+    }
+  }
+}
