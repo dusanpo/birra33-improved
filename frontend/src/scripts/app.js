@@ -178,7 +178,7 @@ const fetchApi = async query => {
       </div>
       <div class="card-footer card-bottom">
         <h5>
-          <button onclick="increment(${id})" class="w-100">Add to Cart</button>
+          <button onclick="increment(${id}); addToCart(this);" class="w-100">Add to Cart</button>
         </h5>
       </div>
     </div>
@@ -194,10 +194,14 @@ const fetchApi = async query => {
   cardWrapper.innerHTML = generatedHTML;
 };
 
+const addToCart = elem => {
+  elem.innerText = "Added";
+  elem.setAttribute("disabled", "true");
+};
+
 const increment = id => {
   let selectedItem = id;
   let searchItem = addToBasket.find(elem => elem.id === selectedItem);
-
   if (searchItem === undefined) {
     addToBasket.push({
       id: selectedItem,
