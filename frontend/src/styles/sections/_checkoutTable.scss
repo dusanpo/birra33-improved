@@ -1,0 +1,31 @@
+.checkout-table {
+  margin-top: 2rem;
+  font-family: $alegreya;
+  color: $table-color;
+  th,
+  tr,
+  td {
+    border-color: #c8bda6;
+  }
+  .table-header {
+    font-size: 1.7rem;
+    color: $table-color;
+  }
+  .table-products {
+    font-family: $fira-sans;
+    font-size: 14px;
+    font-weight: 600;
+    color: $table-color;
+  }
+  .table-total-price {
+    font-family: $fira-sans;
+    .total-amount {
+      font-size: 1.6rem;
+    }
+    .total-price {
+      color: $nav-bg-color;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+  }
+}

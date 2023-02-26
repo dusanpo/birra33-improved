@@ -44,8 +44,8 @@ const checkoutPrice = data => {
       .reduce((prev, next) => prev + next, 0);
     checkoutDiv.innerHTML = `
     <tr>
-     <td colspan="3">Total Amount:</td>
-     <td>$${amount.toFixed(1)}</td>
+     <td colspan="3" class="text-end total-amount">Total:</td>
+     <td class="total-price">$${amount.toFixed(1)}</td>
     </tr>
        `;
   }
