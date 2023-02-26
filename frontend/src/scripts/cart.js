@@ -112,17 +112,21 @@ const totalAmount = data => {
       })
       .reduce((prev, next) => prev + next, 0);
     totalAmountDiv.innerHTML = `
-   <div class="fixed-top amount">
-     <div class="container">
-      <div class="d-flex justify-content-center align-items-center amount-wrapper">
-       <h2 class="text-center total">Total Amount : $${amount.toFixed(1)}</h2>
-      </div>
-    </div>
-  </div>
- <div class="buttons">
-   <button onclick="checkout()" class="checkout">Checkout</button>
-   <button onclick="clearCart()" class="clearCart">Clear Cart</button>
+  <div class="fixed-top amount">
+    <div class="container">
+     <div class="d-flex justify-content-between align-items-center amount-wrapper">
+     <div class="your-cart">YOUR CART</div>
+      <h2 class="text-center total">Total Amount : $${amount.toFixed(1)}</h2>
+         <div class="current-page">
+           <button onclick="homePage()" class="home-btn">HOME</button><i class="fa-solid fa-angle-right fa-xs"></i> YOUR CART
+         </div>
+     </div>
+   </div>
  </div>
+<div class="buttons">
+  <button onclick="checkoutPage()" class="checkout">Checkout</button>
+  <button onclick="clearCart()" class="clear-cart">Clear Cart</button>
+</div>
    `;
   } else {
     totalAmountDiv.innerHTML = "";
@@ -137,7 +141,9 @@ const clearCart = () => {
   localStorage.setItem("data", JSON.stringify(addToBasket));
 };
 
-const checkout = () => {
-  alert("You have successfully placed your order.");
-  clearCart();
+const checkoutPage = () => {
+  location.href = "checkout.html";
+};
+const homePage = () => {
+  location.href = "index.html";
 };

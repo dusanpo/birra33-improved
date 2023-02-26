@@ -1,19 +1,48 @@
 .total-amount {
+  font-family: $alegreya;
   .amount {
     @media (max-width: 1000px) {
       margin-top: 10rem;
     }
     margin-top: 6rem;
-    background-color: #f3e2bd;
+    background-color: $asside-color;
     .amount-wrapper {
       height: 4rem;
+      .your-cart {
+        color: $card-botttom-color;
+        font-size: 1.3rem;
+        @media (max-width: 600px) {
+          font-size: 1rem;
+        }
+      }
+      .current-page {
+        font-family: $fira-sans;
+        font-weight: 600;
+        color: #44322c;
+        @media (max-width: 600px) {
+          font-size: 12px;
+        }
+        .home-btn {
+          border: none;
+          background-color: $asside-color;
+          font-weight: 600;
+          color: #44322c;
+          @media (max-width: 600px) {
+            font-size: 12px;
+          }
+        }
+        i {
+          color: $card-botttom-color;
+          margin: 0 3px;
+        }
+      }
       .total {
         color: $modal-text-color;
       }
     }
   }
   .buttons {
-    @media(max-width: 990px){
+    @media (max-width: 990px) {
       margin-top: 15rem;
     }
     margin-top: 11rem;
@@ -22,14 +51,14 @@
     justify-content: center;
     gap: 1rem;
     .checkout,
-    .clearCart {
+    .clear-cart {
       background-color: $modal-text-color;
       color: $hover-color;
       border: none;
       padding: 6px;
       border-radius: 3px;
     }
-    .clearCart {
+    .clear-cart {
       background-color: $nav-bg-color;
     }
   }
