@@ -78,7 +78,10 @@
         >
           <div class="shop">CHECKOUT</div>
           <div class="current-page">
-           <a href="index.html">HOME</a> <i class="fa-solid fa-angle-right fa-xs"></i><a href="cart.html"> YOUR CART</a> <i class="fa-solid fa-angle-right fa-xs"></i> CHECKOUT
+            <a href="index.html">HOME</a>
+            <i class="fa-solid fa-angle-right fa-xs"></i
+            ><a href="cart.html"> YOUR CART</a>
+            <i class="fa-solid fa-angle-right fa-xs"></i> CHECKOUT
           </div>
         </div>
       </div>
@@ -100,77 +103,107 @@
       </div>
     </section>
 
-    <footer
-    class="footer mt-5"
-    id="contacts"
-    style="background: url(images/footer.jpg)"
-  >
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <div class="footer-box d-flex justify-content-center">
-        <div class="footer-box-item">
-          <img src="./images/logo2.png" alt="logo2" />
-          <p class="description">
-            We are the first modern day brewery. Our success has been built
-            through the development of quality beers.
-          </p>
-          <div class="d-flex mt-5 socials">
-            <div class="icon-box">
-              <i class="fa-brands fa-twitter"></i>
-            </div>
-            <div class="icon-box">
-              <i class="fa-brands fa-facebook-f"></i>
-            </div>
-            <div class="icon-box">
-              <i class="fa-brands fa-google-plus-g"></i>
-            </div>
-            <div class="icon-box">
-              <i class="fa-sharp fa-solid fa-rss"></i>
-            </div>
+    <section class="mx-auto form-auth">
+      <div class="container">
+        <h2 class="text-start mb-3 bill-heading">Billing details</h2>
+        <form class="row g-3">
+          <div class="col md-6">
+            <label class="form-label">First name</label>
+            <input type="text" class="form-control" />
           </div>
-        </div>
-        <div class="footer-box-item">
-          <h3 class="footer-titles links">LINKS</h3>
-          <ul class="footer-links">
-            <li class="list-item">HOME</li>
-            <li class="list-item">BREWERY</li>
-            <li class="list-item">RESERVATION</li>
-            <li class="list-item">ABOUT</li>
-            <li class="list-item">BLOG</li>
-            <li class="list-item">CONTACTS</li>
-          </ul>
-        </div>
-        <div class="footer-box-item">
-          <h3 class="footer-titles blog">BLOG</h3>
-          <ul class="blog-list">
-            <li class="pb-4 blog-list-item">
-              Our spaces are welcoming and infinitely tailorable
-            </li>
-            <li class="blog-list-item">
-              Whatever you might need to make your event sparkle
-            </li>
-          </ul>
-        </div>
-        <div class="footer-box-item">
-          <div class="footer-contacts">
-            <h3 class="footer-titles">CONTACTS</h3>
-            <p class="contacts">
-              <span>Address: </span>1229 SE Nehalem, Portland, OR 97202
-            </p>
-            <p class="contacts"><span>Phone: </span>503 230 9260</p>
-            <p class="contacts"><span>Email: </span>info@brewery.com</p>
+          <div class="col md-6">
+            <label class="form-label">Last name</label>
+            <input type="text" class="form-control" />
           </div>
-        </div>
+          <div class="col-12">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" />
+          </div>
+          <div class="col md-6">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" />
+          </div>
+          <div class="col md-6">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" />
+          </div>
+          <div class="col-12 text-end">
+            <button class="auth-btn">PLACE ORDER</button>
+          </div>
+        </form>
       </div>
-      <div class="copyright-wrapper">
-        <span
-          ><a href="#ancora">AncoraThemes</a> © 2023. All rights reserved.
-          <a href="#terms">Terms of Use </a> and
-          <a href="#privacy"> Privacy Policy</a></span
-        >
-      </div>
-    </div>
-  </footer>
+    </section>
 
+    <footer
+      class="footer mt-5"
+      id="contacts"
+      style="background: url(images/footer.jpg)"
+    >
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="footer-box d-flex justify-content-center">
+          <div class="footer-box-item">
+            <img src="./images/logo2.png" alt="logo2" />
+            <p class="description">
+              We are the first modern day brewery. Our success has been built
+              through the development of quality beers.
+            </p>
+            <div class="d-flex mt-5 socials">
+              <div class="icon-box">
+                <i class="fa-brands fa-twitter"></i>
+              </div>
+              <div class="icon-box">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="icon-box">
+                <i class="fa-brands fa-google-plus-g"></i>
+              </div>
+              <div class="icon-box">
+                <i class="fa-sharp fa-solid fa-rss"></i>
+              </div>
+            </div>
+          </div>
+          <div class="footer-box-item">
+            <h3 class="footer-titles links">LINKS</h3>
+            <ul class="footer-links">
+              <li class="list-item">HOME</li>
+              <li class="list-item">BREWERY</li>
+              <li class="list-item">RESERVATION</li>
+              <li class="list-item">ABOUT</li>
+              <li class="list-item">BLOG</li>
+              <li class="list-item">CONTACTS</li>
+            </ul>
+          </div>
+          <div class="footer-box-item">
+            <h3 class="footer-titles blog">BLOG</h3>
+            <ul class="blog-list">
+              <li class="pb-4 blog-list-item">
+                Our spaces are welcoming and infinitely tailorable
+              </li>
+              <li class="blog-list-item">
+                Whatever you might need to make your event sparkle
+              </li>
+            </ul>
+          </div>
+          <div class="footer-box-item">
+            <div class="footer-contacts">
+              <h3 class="footer-titles">CONTACTS</h3>
+              <p class="contacts">
+                <span>Address: </span>1229 SE Nehalem, Portland, OR 97202
+              </p>
+              <p class="contacts"><span>Phone: </span>503 230 9260</p>
+              <p class="contacts"><span>Email: </span>info@brewery.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-wrapper">
+          <span
+            ><a href="#ancora">AncoraThemes</a> © 2023. All rights reserved.
+            <a href="#terms">Terms of Use </a> and
+            <a href="#privacy"> Privacy Policy</a></span
+          >
+        </div>
+      </div>
+    </footer>
 
     <a href="#" class="scroll-to-top">
       <i class="fa-solid fa-arrow-up"></i>

@@ -1,5 +1,5 @@
 .checkout-table {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-family: $alegreya;
   color: $table-color;
   th,
@@ -21,6 +21,7 @@
     font-family: $fira-sans;
     .total-amount {
       font-size: 1.6rem;
+      color: $table-color;
     }
     .total-price {
       color: $nav-bg-color;
