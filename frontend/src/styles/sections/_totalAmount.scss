@@ -27,6 +27,9 @@
           background-color: $asside-color;
           font-weight: 600;
           color: $table-color;
+          &:hover{
+            color: $card-botttom-color;
+          }
           @media (max-width: 600px) {
             font-size: 12px;
           }

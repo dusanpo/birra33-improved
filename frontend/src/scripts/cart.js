@@ -124,8 +124,8 @@ const totalAmount = data => {
    </div>
  </div>
 <div class="buttons">
-  <button onclick="checkoutPage()" class="checkout">Checkout</button>
-  <button onclick="clearCart()" class="clear-cart">Clear Cart</button>
+  <button onclick="checkoutPage()" class="checkout">CHECKOUT</button>
+  <button onclick="clearCart()" class="clear-cart">CLEAR CART</button>
 </div>
    `;
   } else {
