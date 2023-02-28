@@ -89,7 +89,7 @@
 
     <section class="checkout-table">
       <div class="container">
-        <h2 class="text-center mb-3">Your order</h2>
+        <p class="text-center mb-3 table-headline">Your order</p>
         <table class="table table-bordered border-dark w-75 m-auto">
           <thead class="table-header">
             <th>Product name</th>
@@ -105,27 +105,42 @@
 
     <section class="mx-auto form-auth">
       <div class="container">
-        <h2 class="text-start mb-3 bill-heading">Billing details</h2>
-        <form class="row g-3">
-          <div class="col md-6">
+        <p class="text-start mb-3 bill-heading">Billing details</p>
+        <form class="row g-3" id="form">
+          <div class="col md-6 input-wrapper">
             <label class="form-label">First name</label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="first-name"/>
+            <i class="bi bi-check-circle-fill"></i>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error message</small>
           </div>
-          <div class="col md-6">
+          <div class="col md-6 input-wrapper">
             <label class="form-label">Last name</label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="last-name"/>
+            <i class="bi bi-check-circle-fill"></i>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error message</small>
           </div>
-          <div class="col-12">
+          <div class="col-12 input-wrapper">
             <label class="form-label">Email address</label>
-            <input type="email" class="form-control" />
+            <input type="email" class="form-control" id="email"/>
+            <i class="bi bi-check-circle-fill"></i>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error message</small>
           </div>
-          <div class="col md-6">
+          <div class="col md-6 input-wrapper">
             <label class="form-label">Password</label>
-            <input type="password" class="form-control" />
+            <input type="password" class="form-control" id="password"/>
+            <i class="bi bi-check-circle-fill"></i>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error message</small>
           </div>
-          <div class="col md-6">
+          <div class="col md-6 input-wrapper">
             <label class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" />
+            <input type="password" class="form-control" id="confirm-password"/>
+            <i class="bi bi-check-circle-fill"></i>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error message</small>
           </div>
           <div class="col-12 text-end">
             <button class="auth-btn">PLACE ORDER</button>
@@ -214,6 +229,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="./frontend/src/scripts/formAuth.js"></script>
     <script src="./frontend/src/scripts/scrollToTop.js"></script>
     <script src="./frontend/src/scripts/checkout.js"></script>
   </body>
