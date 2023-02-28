@@ -40,9 +40,9 @@ const generateCartItems = data => {
         </div>
 
         <div class="buttons">
-          <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+          <i onclick="decrement(${id})" class="bi bi-caret-down-square-fill"></i>
           <div id=${id} class="quantity">${item}</div>
-          <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+          <i onclick="increment(${id})" class="bi bi-caret-up-square-fill"></i>
         </div>
 
         <p class="sum-price">$${(item * abv).toFixed(1)}</p>

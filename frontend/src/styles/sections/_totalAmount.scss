@@ -27,7 +27,7 @@
           background-color: $asside-color;
           font-weight: 600;
           color: $table-color;
-          &:hover{
+          &:hover {
             color: $card-botttom-color;
           }
           @media (max-width: 600px) {
@@ -52,17 +52,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    .checkout,
-    .clear-cart {
-      background-color: $modal-text-color;
+    gap: 0.8rem;
+    .checkout {
+      background-color: $nav-bg-color;
       color: $hover-color;
       border: none;
       padding: 6px;
-      border-radius: 3px;
+      &:hover {
+        background-color: #75422e;
+      }
     }
     .clear-cart {
-      background-color: $nav-bg-color;
+      color: $nav-bg-color;
+      border: none;
+      background-color: inherit;
+      font-size: 17px;
+      font-weight: 600;
+      &:hover {
+        background-color: #75422e;
+        padding: 6px;
+        color: $hover-color;
+        font-size: 16px;
+        font-weight: normal;
+        margin-right: 0.4rem;
+      }
     }
   }
 }

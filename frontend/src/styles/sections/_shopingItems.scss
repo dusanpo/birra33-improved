@@ -19,12 +19,14 @@ body {
   }
   .shopping-cart {
     display: grid;
-    grid-template-columns: repeat(1, 26rem);
+    grid-template-columns: repeat(1, 28rem);
     justify-content: center;
     gap: 1.5rem;
     .cart-item {
-      border-radius: 5px;
+      border: 1px solid #c8bda6;
       display: flex;
+      background-color: #e8d5b3;
+      padding-left: 1rem;
       &:hover {
         box-shadow: 1px 0px 33px 4px rgba(128, 112, 112, 0.79);
         -webkit-box-shadow: 1px 0px 33px 4px rgba(128, 112, 112, 0.79);
@@ -32,17 +34,15 @@ body {
       }
       .image-wrapper {
         width: 6rem;
-        background-color: $card-botttom-color;
         .image {
           height: 9rem;
-          padding-top: 1rem;
+          padding-top: 1.5rem;
           display: block;
           margin-left: auto;
           margin-right: auto;
         }
       }
       .details {
-        background-color: #ecce9bd6;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -61,16 +61,16 @@ body {
             align-items: center;
             gap: 10px;
             .cart-price {
-              background-color: #664e44;
+              background-color: #65524b;
               color: $hover-color;
               border-radius: 4px;
               padding: 2px 6px;
             }
           }
           .fa-sharp {
-            color: $modal-text-color;
-            font-size: 22px;
-            padding-bottom: 20px;
+            color: $red-color;
+            font-size: 1rem;
+            margin-bottom: 2rem;
           }
         }
         .buttons {
@@ -78,11 +78,12 @@ body {
           flex-direction: row;
           gap: 8px;
           font-size: 1.3rem;
-          .bi-dash-lg {
-            color: red;
-          }
-          .bi-plus-lg {
-            color: green;
+          .bi-caret-down-square-fill,
+          .bi-caret-up-square-fill {
+            color: $card-botttom-color;
+            &:hover {
+              color: $nav-bg-color;
+            }
           }
         }
         .sum-price {

@@ -3,35 +3,66 @@
   @media (max-width: 768px) {
     width: 100%;
   }
-  margin-top: 5rem;
+  margin-top: 6rem;
   font-family: $alegreya;
   margin-bottom: 6rem;
-  .bill-heading{
+  .bill-heading {
     color: $table-color;
+    padding-bottom: 0.8rem;
+    font-size: 2.2rem;
   }
-  .form-label{
-    color: $nav-bg-color;
-    font-size: 1.2rem;
-  }
-  .form-control {
-    background-color: inherit;
-    border-color: #c8bda6;
-    &:hover{
+  .input-wrapper {
+    position: relative;
+    .form-label {
+      color: $nav-bg-color;
+      font-size: 1.3rem;
+    }
+    .form-control {
+      background-color: inherit;
+      border-color: #c8bda6;
+      &:hover {
         border-color: $icon-color;
+      }
+      &:focus {
+        box-shadow: none;
+      }
     }
-    &:focus{
-        box-shadow: none; 
-        border-color: $nav-bg-color; 
+    i {
+      position: absolute;
+      top: 3rem;
+      right: 1rem;
+      visibility: hidden;
+    }
+    small {
+      visibility: hidden;
     }
   }
-  .auth-btn{
+  .auth-btn {
     border: none;
     padding: 0.5rem 3rem;
     background-color: $nav-bg-color;
     color: $hover-color;
-    &:hover{
-        background-color:#7f301a;
+    &:hover {
+      background-color: #7f301a;
     }
   }
- 
+  .input-wrapper.success input{
+    border: 1px solid #6DC22E;
+  }
+  .input-wrapper.error input{
+    border: 1px solid $red-color;
+  }
+  .input-wrapper.success i.bi-check-circle-fill{
+    visibility: visible;
+    color: #6DC22E;
+  }
+  .input-wrapper.error i.bi-exclamation-circle-fill{
+    visibility: visible;
+    color: $red-color;
+  }
+  .input-wrapper.error small{
+    visibility: visible;
+    color: $red-color;
+    font-family: $fira-sans;
+  }
 }
