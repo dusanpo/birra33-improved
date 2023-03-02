@@ -57,15 +57,14 @@ const inputsCheck = () => {
 const setError = (input, message) => {
   const inputWrapper = input.parentElement; //.input-wrapper
   const small = inputWrapper.querySelector("small");
-
   small.innerText = message;
-
-  inputWrapper.className = "input-wrapper error";
+  inputWrapper.classList.add("error");
 };
 
 const setSuccess = input => {
   const inputWrapper = input.parentElement;
-  inputWrapper.className = "input-wrapper success";
+  inputWrapper.classList.remove("error");
+  inputWrapper.classList.add("success");
 };
 
 const isEmail = email => {
@@ -75,20 +74,33 @@ const isEmail = email => {
 };
 
 const successMessage = () => {
-    const inputWrapper = document.querySelectorAll(".input-wrapper");
-    let success = 0;
-    for (i = 0; i < inputWrapper.length; i++) {
-      let formIterate = inputWrapper;
-      let check = formIterate[i].classList.contains("success");
-      if (check !== true) {
-        success++;
-        break;
-      }
-    }
-    if (success === 1) {
-      return;
-    } else {
-      alert("You have successfully placed your order!")
-      
+  const inputWrapper = document.querySelectorAll(".input-wrapper");
+  let success = 0;
+  for (i = 0; i < inputWrapper.length; i++) {
+    let formIterate = inputWrapper;
+    let check = formIterate[i].classList.contains("success");
+    if (check !== true) {
+      success++;
+      break;
     }
   }
+  if (success === 1) {
+    return;
+  } else {
+    setTimeout(() => {
+      showAlert();
+    }, 1000);
+  }
+};
+
+const showAlert = () => {
+  const myAlert = `
+<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+   <strong>You have successfully placed your order!</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+ `;
+
+  document.getElementById("alerts").innerHTML = myAlert;
+  window.scrollTo(0, 0);
+};
