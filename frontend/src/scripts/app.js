@@ -8,6 +8,8 @@ const prevPage = document.getElementById("prevPage");
 const nextPage = document.getElementById("nextPage");
 const loaderOutput = document.getElementById("loader-output");
 const ibuFilter = document.getElementById("ibu-filter");
+const arrowLeft = document.querySelector(".fa-angles-left");
+
 
 let foodPairing = "",
   ABVmin = "",
@@ -150,8 +152,10 @@ const fetchApi = async query => {
   pageNumber.innerText = page;
   if (page === 1) {
     prevPage.disabled = true;
+    arrowLeft.classList.replace("show-icon", "hide-icon");
   } else {
     prevPage.disabled = false;
+    arrowLeft.classList.replace("hide-icon", "show-icon");
   }
   if (results.length < 9) {
     nextPage.disabled = true;

@@ -8,11 +8,14 @@
     padding: 1.2rem;
     border: none;
     background-color: $hover-color;
-    color: $modal-text-color;
-    .fa-angles-left,
-    .fa-angles-right {
+    .show-icon {
       color: $nav-bg-color;
       font-size: 1.5rem;
+    }
+    .hide-icon {
+      color: $nav-bg-color;
+      font-size: 1.5rem;
+      opacity: 0.5;
     }
   }
   .current {
@@ -20,6 +23,6 @@
     padding: 0.6rem 1.2rem;
     border-radius: 50%;
     border: 5px solid $nav-bg-color;
-     @include size-weight(1.2rem, 600);
+    @include size-weight(1.2rem, 600);
   }
 }
