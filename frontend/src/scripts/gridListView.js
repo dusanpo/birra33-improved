@@ -16,9 +16,6 @@ const gridList = () => {
         for (let i = 0; i < listView.length; i++) {
           listView[i].style.display = "block";
         }
-        for (let list of listView) {
-          list.style.display = "block";
-        }
       } else {
         for (let i = 0; i < gridView.length; i++) {
           gridView[i].style.display = "block";
