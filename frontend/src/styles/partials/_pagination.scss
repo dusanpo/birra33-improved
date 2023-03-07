@@ -9,15 +9,17 @@
     border: none;
     background-color: $hover-color;
     color: $modal-text-color;
-    @include size-weight(1rem, 600);
-    &:disabled {
-      font-weight: 400;
+    .fa-angles-left,
+    .fa-angles-right {
+      color: $nav-bg-color;
+      font-size: 1.5rem;
     }
   }
   .current {
+    color: $nav-bg-color;
     padding: 0.6rem 1.2rem;
     border-radius: 50%;
-    border: 5px solid $card-botttom-color;
-    @include size-weight(1.2rem, 600);
+    border: 5px solid $nav-bg-color;
+     @include size-weight(1.2rem, 600);
   }
 }

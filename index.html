@@ -227,6 +227,16 @@
           </div>
 
           <div class="col-lg-9">
+            <div class="links-view">
+              <ul>
+                <li data-view="grid-view" class="li-grid">
+                  <i class="bi bi-grid-3x3-gap-fill"></i>
+                </li>
+                <li data-view="list-view" class="li-list">
+                  <i class="fa-solid fa-list"></i>
+                </li>
+              </ul>
+            </div>
             <div class="row card-wrapper" id="loader-output"></div>
           </div>
         </div>
@@ -236,9 +246,13 @@
           <div
             class="pagination d-flex justify-content-center align-items-center pb-4"
           >
-            <button class="page" id="prevPage" disabled>PREV</button>
+            <button class="page" id="prevPage" disabled>
+              <i class="fa-solid fa-angles-left"></i>
+            </button>
             <div class="current" id="pageNumber"></div>
-            <button class="page" id="nextPage" disabled>NEXT</button>
+            <button class="page" id="nextPage" disabled>
+              <i class="fa-solid fa-angles-right"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -335,6 +349,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="./frontend/src/scripts/gridListView.js"></script>
     <script src="./frontend/src/scripts/calculation.js"></script>
     <script src="./frontend/src/scripts/modal.js"></script>
     <script src="./frontend/src/scripts/slider.js"></script>

@@ -1,0 +1,17 @@
+.links-view {
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: $nav-bg-color;
+      &:hover {
+        color: #825730;
+      }
+    }
+    .li-list {
+      margin-left: 1rem;
+    }
+  }
+}

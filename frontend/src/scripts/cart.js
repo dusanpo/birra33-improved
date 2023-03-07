@@ -118,7 +118,7 @@ const totalAmount = data => {
      <div class="your-cart">YOUR CART</div>
       <h2 class="text-center total">Total Amount : $${amount.toFixed(1)}</h2>
          <div class="current-page">
-           <button onclick="homePage()" class="home-btn">HOME</button><i class="fa-solid fa-angle-right fa-xs"></i> YOUR CART
+           <button onclick="homePage()" class="home-btn">SHOP</button><i class="fa-solid fa-angle-right fa-xs"></i> YOUR CART
          </div>
      </div>
    </div>

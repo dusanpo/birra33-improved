@@ -1,5 +1,6 @@
 @import "../abstracts/mixins/textFont";
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -11,13 +12,14 @@ html, body {
       width: 9rem;
       margin-left: 20rem;
       margin-top: 30rem;
-      @media(max-width: 768px){
+      @media (max-width: 768px) {
         margin-top: 10rem;
         margin-left: 5rem;
       }
     }
   }
   .card-wrapper {
+    margin-left: 1rem;
     @media (max-width: 768px) {
       margin-left: 6rem;
     }
@@ -27,38 +29,103 @@ html, body {
       font-size: 2rem;
       margin-top: 25rem;
       margin-left: 6rem;
-      @media(max-width: 768px){
+      @media (max-width: 768px) {
         margin-top: 1rem;
         margin-left: 2rem;
       }
     }
-    margin-left: 1rem;
-    .cards {
-      width: 18rem;
-      height: 25rem;
-      margin-bottom: 4rem;
-      .card-main {
-        background-color: #e3cfab;
-        position: relative;
-        &:hover {
-          background-color: $hover-color;
+    .grid-view {
+      display: block;
+      .cards {
+        width: 18rem;
+        height: 25rem;
+        margin-bottom: 4rem;
+        .card-main {
+          background-color: #e3cfab;
+          position: relative;
+          &:hover {
+            background-color: $hover-color;
+          }
+          .img {
+            height: 17.5rem;
+            display: block;
+            margin: 0 auto;
+          }
+          .beer-price {
+            margin-top: 1rem;
+            color: #c1431f;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: "Fira Sans";
+          }
+          .logo {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            cursor: pointer;
+            opacity: 0;
+            transition: transform ease 250ms;
+            &:hover {
+              opacity: 1;
+              color: $white-color;
+              transform: translate(0, -2rem);
+              filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+            }
+          }
         }
-        .img {
-          height: 17.5rem;
-          display: block;
-          margin: 0 auto;
+        .card-bottom {
+          background-color: $card-botttom-color;
+          position: relative;
+
+          button {
+            @include text-font(uppercase, $alegreya);
+            border: none;
+            background-color: $card-botttom-color;
+            color: $hover-color;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            padding-top: 1rem;
+            padding-bottom: 2.2rem;
+            &:hover {
+              background-color: $nav-bg-color;
+            }
+          }
         }
-        .beer-price {
-          margin-top: 1rem;
-          color: #c1431f;
-          font-size: 0.9rem;
+      }
+    }
+    .list-view {
+      display: none;
+      .card-list-view {
+        padding: 1rem 1rem 1rem 0;
+        background-color: $asside-color;
+        font-family: $fira-sans;
+        .grid-img {
+          height: 19rem;
+          padding: 1rem 0;
+        }
+        .beer-name{
+          font-family: $alegreya;
+          font-size: 2.1rem;
+        }
+        .beer-description{
+          color: $table-color;
           font-weight: 600;
-          font-family: "Fira Sans";
+          font-size: 0.9rem;
+          line-height: 1.1rem;
         }
-        .logo {
+        .beer-price{
+          font-weight: 600;
+          color: $table-color;
+          margin-bottom: 1rem;
+        }
+        .modal-logo {
           position: absolute;
           top: 50%;
-          left: 40%;
+          left: 13%;
           cursor: pointer;
           opacity: 0;
           transition: transform ease 250ms;
@@ -69,27 +136,20 @@ html, body {
             filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
           }
         }
-      }
-      .card-bottom {
-        background-color: $card-botttom-color;
-        position: relative;
-
-        button {
-          @include text-font(uppercase, $alegreya);
-          border: none;
+        .list-button {
           background-color: $card-botttom-color;
+          border: none;
           color: $hover-color;
-          font-size: 1.1rem;
-          letter-spacing: 1px;
-          position: absolute;
-          right: 0;
-          top: 0;
-          height: 100%;
-          padding-top: 1rem;
-          padding-bottom: 2.2rem;
+          font-family: $alegreya;
+          font-size: 1rem;
+          text-transform: uppercase;
+          padding: 0.7rem 2.7rem;
           &:hover {
             background-color: $nav-bg-color;
           }
+        }
+        .addedBtn {
+          padding: 0.7rem 4rem;
         }
       }
     }

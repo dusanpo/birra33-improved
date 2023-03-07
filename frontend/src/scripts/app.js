@@ -161,13 +161,13 @@ const fetchApi = async query => {
 
   let generatedHTML = "";
   results.map(result => {
-    const { image_url, abv, id } = result;
+    const { image_url, abv, id, name } = result;
     if (id > 80) {
       nextPage.disabled = true;
       return;
     }
     generatedHTML += `
-    <div beer-id="${id}" class="col-md-4">
+    <div beer-id="${id}" class="col-md-6 col-lg-6 col-xl-4 view_wrap grid-view">
     <div class="card text-center border-0 cards">
       <div class="card-body card-main" >
         <img class="img" src=${image_url} alt="image"/>
@@ -183,6 +183,31 @@ const fetchApi = async query => {
       </div>
     </div>
   </div>
+
+  <div beer-id="${id}" class="view_wrap list-view">
+    <div class="card mb-4 border-0 rounded-0 card-list-view">
+    <div class="row g-0">
+    <div class="col-md-4 text-center">
+      <img class="img-fluid grid-img" src=${image_url}  alt="image">
+     </div>
+     <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title beer-name">${name}</h2>
+          <p class="card-text beer-description">Ut wisi enim ad minim veniam, quis nostrud 
+             exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+             Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, 
+             vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent 
+             luptatum zzril delenit augue duis.</p>
+          <p class="card-title beer-price">$${abv}</p>
+          <div class="modal-logo">
+             <i onclick="seeMore(this)" class="fa-solid fa-link fa-3x" beer-id="${id}" data-bs-toggle="modal" data-bs-target="#seeMoreModal"></i>
+           </div>
+            <button onclick="increment(${id}); addToCart(this);" class="list-button">Add to Cart</button>  
+        </div>
+      </div>
+     </div>
+   </div>
+  </div>
     `;
     cardWrapper.classList.remove("not-found");
   });
@@ -192,6 +217,7 @@ const fetchApi = async query => {
   }
 
   cardWrapper.innerHTML = generatedHTML;
+  gridList();
 };
 
 const addToCart = elem => {
