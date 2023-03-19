@@ -55,7 +55,7 @@ const inputsCheck = () => {
 };
 
 const setError = (input, message) => {
-  const inputWrapper = input.parentElement; //.input-wrapper
+  const inputWrapper = input.parentElement; 
   const small = inputWrapper.querySelector("small");
   small.innerText = message;
   inputWrapper.classList.add("error");

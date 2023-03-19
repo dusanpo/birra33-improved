@@ -41,12 +41,15 @@
     @include size-weight(1rem, 600);
     cursor: pointer;
     &:hover {
-      color: $icon-color;
+      opacity: 0.7;
     }
     i {
       color: $icon-color;
       margin-right: 0.5rem;
       font-size: 0.8rem;
     }
+  }
+  .active-color {
+    color: $icon-color;
   }
 }

@@ -10,6 +10,9 @@ body {
       padding-top: 3.5rem;
       color: $modal-text-color;
       font-size: 1.8rem;
+      @media (max-width: 992px) {
+        padding-top: 8rem;
+       }
     }
     .fa-circle-arrow-left {
       margin-top: 0.5rem;
@@ -68,9 +71,12 @@ body {
             }
           }
           .fa-sharp {
-            color: $red-color;
+            color: $modal-text-color;
             font-size: 1rem;
             margin-bottom: 2rem;
+            &:hover{
+              color: $red-color;
+            }
           }
         }
         .buttons {

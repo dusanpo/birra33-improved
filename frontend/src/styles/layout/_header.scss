@@ -1,22 +1,27 @@
 @import "../abstracts/mixins/sizeWeight";
 .navbar {
   background: $nav-bg-color;
+  padding: 0;
   .navbar-items {
     margin-right: 18rem;
     .nav-item {
       @include size-weight(1rem, 600);
       .nav-link {
         color: $hover-color;
+        padding: 1.7rem 0.7rem;
+        &:hover {
+          background-color: #74392b;
+          color: $icon-color;
+        }
       }
     }
     .cart {
       @media(max-width: 990px){
-        margin-top: 1rem;
-        margin-left: 0;
-        margin-right: 35rem;
+        margin: 1rem 35rem 1rem 0;
       }
       position: relative;
       margin-left: 5rem;
+      margin-top: 1rem;
       background-color: $hover-color;
       color: $modal-text-color;
       font-size: 1.9rem;

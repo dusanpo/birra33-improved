@@ -9,7 +9,13 @@ const nextPage = document.getElementById("nextPage");
 const loaderOutput = document.getElementById("loader-output");
 const ibuFilter = document.getElementById("ibu-filter");
 const arrowLeft = document.querySelector(".fa-angles-left");
+const listView = document.getElementsByClassName("list-view");
+const gridView = document.getElementsByClassName("grid-view");
+const liGrid = document.querySelector(".li-grid");
+const liList = document.querySelector(".li-list");
 
+let addToBasket = JSON.parse(localStorage.getItem("data")) || [];
+let currentView = localStorage.getItem("currentView");
 
 let foodPairing = "",
   ABVmin = "",
@@ -17,7 +23,9 @@ let foodPairing = "",
   brewedAfter = "",
   brewedBefore = "",
   IBU = "",
-  page = 1,
+  page = localStorage.getItem("PageNumber")
+    ? localStorage.getItem("PageNumber")
+    : 1,
   perPage = "&per_page=9";
 
 window.addEventListener("load", () => {
@@ -43,9 +51,6 @@ searchByName.addEventListener("change", () => {
 filterFood.addEventListener("change", e => {
   const value = e.target.value;
   switch (value) {
-    case "all":
-      foodPairing = "";
-      break;
     case "chicken":
       foodPairing = "&food=chicken";
       break;
@@ -126,8 +131,6 @@ ibuFilter.addEventListener("click", e => {
   }, 500);
 });
 
-let addToBasket = JSON.parse(localStorage.getItem("data")) || [];
-
 const fetchApi = async query => {
   let response;
   if (query) {
@@ -171,7 +174,7 @@ const fetchApi = async query => {
       return;
     }
     generatedHTML += `
-    <div beer-id="${id}" class="col-md-6 col-lg-6 col-xl-4 view_wrap grid-view">
+    <div beer-id="${id}" class="col-md-6 col-lg-6 col-xl-4 grid-view">
     <div class="card text-center border-0 cards">
       <div class="card-body card-main" >
         <img class="img" src=${image_url} alt="image"/>
@@ -188,7 +191,7 @@ const fetchApi = async query => {
     </div>
   </div>
 
-  <div beer-id="${id}" class="view_wrap list-view">
+  <div beer-id="${id}" class="list-view">
     <div class="card mb-4 border-0 rounded-0 card-list-view">
     <div class="row g-0">
     <div class="col-md-4 text-center">
@@ -219,14 +222,19 @@ const fetchApi = async query => {
     generatedHTML = "No products were found matching your selection.";
     cardWrapper.classList.add("not-found");
   }
-
   cardWrapper.innerHTML = generatedHTML;
-  gridList();
+
+  if (currentView === "list") {
+    showListView();
+  } else {
+    showGridView();
+  }
 };
 
 const addToCart = elem => {
   elem.innerText = "Added";
   elem.setAttribute("disabled", "true");
+  elem.classList.add("addedBtn");
 };
 
 const increment = id => {
@@ -247,17 +255,55 @@ const increment = id => {
 calculation();
 
 prevPage.addEventListener("click", () => {
-  page--;
-  fetchApi();
-});
-nextPage.addEventListener("click", () => {
-  page++;
-  fetchApi();
+  loader();
+  if (page > 1) {
+    page--;
+  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setTimeout(() => {
+    fetchApi();
+  }, 500);
+  localStorage.setItem("PageNumber", page);
 });
 
-const refreshPage = () => {
+nextPage.addEventListener("click", () => {
+  loader();
+  page++;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setTimeout(() => {
+    fetchApi();
+  }, 500);
+  localStorage.setItem("PageNumber", page);
+});
+
+const clearFilters = () => {
   loader();
   setTimeout(() => {
     window.location.reload();
   }, 500);
+  localStorage.removeItem("PageNumber");
+};
+
+const showGridView = () => {
+  for (let listItems of listView) {
+    listItems.style.display = "none";
+  }
+  for (let gridItems of gridView) {
+    gridItems.style.display = "block";
+  }
+  liList.classList.remove("active");
+  liGrid.classList.add("active");
+  localStorage.setItem("currentView", "grid");
+};
+
+const showListView = () => {
+  for (let gridItems of gridView) {
+    gridItems.style.display = "none";
+  }
+  for (let listItems of listView) {
+    listItems.style.display = "block";
+  }
+  liGrid.classList.remove("active");
+  liList.classList.add("active");
+  localStorage.setItem("currentView", "list");
 };

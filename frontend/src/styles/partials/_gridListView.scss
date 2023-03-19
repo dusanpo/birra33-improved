@@ -1,13 +1,15 @@
 .links-view {
-  ul {
+  .current-view-list {
     list-style: none;
-    display: flex;
+    .active {
+      color: $nav-bg-color;
+    }
     li {
       font-size: 1.8rem;
       cursor: pointer;
-      color: $nav-bg-color;
+      color: #825730;
       &:hover {
-        color: #825730;
+        color: $nav-bg-color;
       }
     }
     .li-list {
