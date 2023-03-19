@@ -110,10 +110,6 @@
                   <p class="food-title">foods</p>
                   <form id="filter-food" class="d-flex flex-column">
                     <label>
-                      <input type="radio" name="filter" value="all" checked />
-                      <span class="food-categories">All</span>
-                    </label>
-                    <label>
                       <input type="radio" name="filter" value="chicken" />
                       <span class="food-categories">Chicken</span>
                     </label>
@@ -192,16 +188,6 @@
                 <hr />
               </div>
 
-              <div class="text-center clear-btn-wrapper">
-                <button
-                  type="submit"
-                  onClick="refreshPage()"
-                  class="clear-button"
-                >
-                  Clear All
-                </button>
-              </div>
-
               <ol id="ibu-filter">
                 <p class="categories-title">Categories</p>
                 <li class="angle-right-icon" value="1">
@@ -223,17 +209,30 @@
                   <i class="fa-solid fa-angle-right fa-xs"></i>Uncategorized
                 </li>
               </ol>
+
+              <div class="text-center clear-btn-wrapper">
+                <button
+                  type="submit"
+                  onclick="clearFilters()"
+                  class="clear-button"
+                >
+                  Clear All
+                </button>
+              </div>
             </div>
           </div>
 
           <div class="col-lg-9">
             <div class="links-view">
-              <ul>
-                <li data-view="grid-view" class="li-grid">
-                  <i class="bi bi-grid-3x3-gap-fill"></i>
+              <ul class="d-flex current-view-list">
+                <li class="li-grid active">
+                  <i
+                    onclick="showGridView()"
+                    class="bi bi-grid-3x3-gap-fill"
+                  ></i>
                 </li>
-                <li data-view="list-view" class="li-list">
-                  <i class="fa-solid fa-list"></i>
+                <li class="li-list">
+                  <i onclick="showListView()" class="fa-solid fa-list"></i>
                 </li>
               </ul>
             </div>
@@ -349,7 +348,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="./frontend/src/scripts/gridListView.js"></script>
+    <script src="./frontend/src/scripts/activeFilters.js"></script>
     <script src="./frontend/src/scripts/calculation.js"></script>
     <script src="./frontend/src/scripts/modal.js"></script>
     <script src="./frontend/src/scripts/slider.js"></script>
